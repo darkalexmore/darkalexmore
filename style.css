@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@600&family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta&family=Open+Sans&display=swap');
+
+*{
+    padding:0;
+    margin: 0;
+}
+
+
+.logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.techhub-logo{
+    height:8em;
+}
+table {
+    font-family: 'Mukta', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #fcc2ed;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #fcc2ed;
+  }
+  h1{
+    font-family: 'Mukta', sans-serif;
+      text-align:center;
+  }
+
+.size{
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+.main-content{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+    width:100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.table-container{
+    width:90vw;
+    margin-top: 2em;
+}
+@media only screen and (max-width:700px){
+    .techhub-logo{
+        height:5em;
+    }
+}

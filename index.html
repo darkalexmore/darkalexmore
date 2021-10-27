@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta X="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/ico" href="assets/favicon.png">
+    <title>MVITXOX</title>
+</head>
+<body onload="putData()">
+
+    <section>
+        <div class="logo">
+            
+        </div>
+    </section>
+    <section class="main-content">
+        <h1>MVIT XOX</h1>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Rating</th>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>Vote</th>
+                </tr>
+                <tbody id="tableData">
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+    <script>
+        var data=[
+            {
+                id: '1',
+                rating: 1,
+                X: 'Nadimpalli Kushal',
+                Y: 'Nadimpalli Kushal'
+            },
+            {
+                id: '2',
+                rating: 8,
+                X: 'Anish Kumar',
+                Y: 'Nadimpalli Kushal'
+            },
+            {
+                id: '3',
+                rating: 5,
+                X: 'Shreya N Karnelli',
+                Y: 'Nadimpalli Kushal'
+            },
+        ]
+        function sortColumn(){
+            data=data.sort((p1,p2)=>{
+                return p2['rating']-p1['rating']
+            })
+        }
+        function putData()
+        {
+            var dataList="";
+            sortColumn();
+            var count=1;
+            for(i of data){
+                dataList=dataList+"<tr>"+"<td>"+count.toString(10)+"</td>"+"<td>"+i.X+"</td>"+"<td>"+i.Y+"</td>"+"<td>"+`<span onclick='p(`+i.id+`,`+i.rating+`)'><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm7 14h-5v5h-4v-5h-5v-4h5v-5h4v5h5v4z"/></svg></span>`+`<span id='plus`+i.id+`' class="size">`+i.rating+'</span>'+`<span id='minus'><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm7 14h-14v-4h14v4z"/></svg></span>`+"</td>"+"</tr>";
+                count+=1;
+            }
+            count=1;
+            document.getElementById('tableData').innerHTML=dataList;
+        }
+        function p(id,rating){
+            ElementId='plus'+id;
+            rating++;
+            document.getElementById(ElementId).innerHTML=rating;
+        }
+
+    </script>
+    
+</body>
+</html>
